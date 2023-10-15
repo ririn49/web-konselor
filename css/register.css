@@ -1,91 +1,154 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
 body {
-    background-color: #e7edfb;
-    font-family: manrope;
-    font-size: larger;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(251,170,115);
+}
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .gender {
+  column-gap: 5px;
+}
+.gender input {
+  accent-color: rgb(96, 93, 113);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.gender label {
+  color: #707070;
+}
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border-radius: 10px;
+  border-color: #fbaa73;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(251,170,115);
+}
+.form button:hover {
+  background: rgb(251,170,115);
 }
 
-header {
-    display: none;
+form .signup-link{
+  color: #262626;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.wrapper {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
+form .signup-link a{
+  color: #4158d0;
+  text-decoration: none;
 }
 
-.box {
-    background-color: #fff;
-    border-radius: 10px;
+form .signup-link a:hover{
+  text-decoration: underline;
+}
 
-    margin: auto auto;
-    padding: 40px;
+.kembali{
+    font-family: "Manrope";
+    font-size: .75em;
+    font-weight: 700;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 30px;
+    text-decoration-line: underline;
+    top: 30px;
+
 }
 
-.box h2 {
-    margin: 0 0 30px 0;
-    padding: 0;
-    color: #fbaa73;
-    text-align: center;
+.kembali a{
+  color: #fff;
 }
 
-.box .inputBox p {
-    color: #060606; 
-    font-size: 20px;  
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
 }
-
-.box .inputBox input[type="text"] {
-    font-family: manrope;
-    font-size: 18px;
-}
-.box .inputBox input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fbaa73;
-    color: black;
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    outline: none;
-    padding: 10px 0;
-    width: 100%;
-}
-
-.box input[type="submit"], .box button[type="submit"], a.button {
-    font-family: sans-serif;
-    background: #fbaa73;
-    font-size: 11px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 10px 20px;
-    letter-spacing: 2px;
-    outline: none;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 2px 10px 2px 0;
-    display: inline-block;
-}
-
-.box input[type="submit"]:hover, .box button[type="submit"]:hover, a.button:hover {
-    opacity: 0.8;
-}
-
